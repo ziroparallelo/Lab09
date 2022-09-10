@@ -1,12 +1,30 @@
 package it.polito.tdp.borders.model;
 
+import java.util.Map;
+import java.util.Set;
+
 public class TestModel {
 
 	public static void main(String[] args) {
 
 		Model model = new Model();
 
-		System.out.println("TestModel -- TODO");
+
+		model.creaGrafo(2006);
+		
+		Map<Country, Integer> statiGrado = model.getStatiGrado(2006);
+		Set<Country> stati = statiGrado.keySet();
+		
+		Country stato = null;
+		
+		for(Country c: stati) {
+			stato = c;
+			break;
+		}
+		
+		model.esploraGrafo(stato);
+//		
+//		System.out.println("TestModel -- TODO");
 		
 //		System.out.println("Creo il grafo relativo al 2000");
 //		model.createGraph(2000);
